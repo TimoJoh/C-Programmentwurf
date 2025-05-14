@@ -1,0 +1,14 @@
+# ninja log v6
+45	426	7689092085705895	CMakeFiles/morse.dir/src/morse.c.obj	a3f9b915565c9b4f
+6	451	7689092085252635	CMakeFiles/morse.dir/src/main.c.obj	d77c0fafdf8615c0
+456	1111	7689092089735839	morse.exe	3f4bf70ebf88d84e
+12	333	7689109687521728	CMakeFiles/morse.dir/src/morse.c.obj	a3f9b915565c9b4f
+336	897	7689109690891393	morse.exe	3f4bf70ebf88d84e
+9	339	7689110096646749	CMakeFiles/morse.dir/src/morse.c.obj	a3f9b915565c9b4f
+369	918	7689110100571118	morse.exe	3f4bf70ebf88d84e
+31	372	7689110510795388	CMakeFiles/morse.dir/src/morse.c.obj	a3f9b915565c9b4f
+377	1070	7689110514252118	morse.exe	3f4bf70ebf88d84e
+9	327	7689111464688908	CMakeFiles/morse.dir/src/morse.c.obj	a3f9b915565c9b4f
+332	889	7689111467901990	morse.exe	3f4bf70ebf88d84e
+43	429	7689113517443125	CMakeFiles/morse.dir/src/main.c.obj	d77c0fafdf8615c0
+433	1061	7689113521303732	morse.exe	3f4bf70ebf88d84e

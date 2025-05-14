@@ -1,0 +1,3 @@
+C:/Users/Z0286795/OneDrive - ZF Friedrichshafen AG/.2 Theoriesemester/C-Programming/C-Programmentwurf/build/CMakeFiles/morse.dir
+C:/Users/Z0286795/OneDrive - ZF Friedrichshafen AG/.2 Theoriesemester/C-Programming/C-Programmentwurf/build/CMakeFiles/edit_cache.dir
+C:/Users/Z0286795/OneDrive - ZF Friedrichshafen AG/.2 Theoriesemester/C-Programming/C-Programmentwurf/build/CMakeFiles/rebuild_cache.dir
