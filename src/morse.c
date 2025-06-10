@@ -1,14 +1,30 @@
+/**
+ * @file morse.c
+ * @brief Implementierung der Funktionen für das Morsecode-Tool.
+ *
+ * Dieses Modul enthält die Implementierungen zum Encodieren und Decodieren von
+ * Text <-> Morsecode. Zusätzlich werden die Hilfefunktion und die
+ * Autoreninformationen bereitgestellt.
+ */
+
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
 #include "morse.h"
 
-// Morsecode Tabelle (verkürzt)
+/**
+ * @brief Struktur zur Zuordnung von Zeichen zu Morsecode.
+ */
 typedef struct {
-    char character;
-    const char* morse;
+    char character;           /**< Klartext-Zeichen */
+    const char* morse;        /**< Entsprechender Morsecode */
 } MorseCode;
 
+/**
+ * @brief Morsecode-Tabelle für unterstützte Zeichen.
+ *
+ * Basierend auf DARC-Tabelle: https://dk0ru.github.io/downloads/m21-morse-code.pdf
+ */
 static const MorseCode morse_table[] = {
     {'A', ".-"},    {'B', "-..."},  {'C', "-.-."},
     {'D', "-.."},   {'E', "."},     {'F', "..-."},
@@ -30,6 +46,17 @@ static const MorseCode morse_table[] = {
     {'/', "-..-."}, {'@', ".--.-."}
 };
 
+/**
+ * @brief Encodiert einen Text in Morsecode.
+ *
+ * Jeder Buchstabe wird durch einen SP (SPACE) getrennt.
+ * Wörter werden durch drei SPACES oder alternativ ' / ' getrennt.
+ * Unbekannte Zeichen werden als '*' dargestellt.
+ *
+ * @param input Eingabetext (UTF-8).
+ * @param out Zielstream (stdout oder Datei).
+ * @param slash_mode Aktiviert optional den Slash-Worttrenner (--slash-wordspacer).
+ */
 void encode_text(const char* input, FILE* out, int slash_mode) {
     for (const char* p = input; *p; ++p) {
         if (*p == '\n' || *p == '\r') {
@@ -53,6 +80,16 @@ void encode_text(const char* input, FILE* out, int slash_mode) {
     fputc('\n', out);
 }
 
+/**
+ * @brief Dekodiert Morsecode in Klartext.
+ *
+ * Morsezeichen werden durch SPACES getrennt.
+ * Wörter werden durch drei SPACES getrennt.
+ * Unbekannte Morsezeichen werden als '*' dargestellt.
+ *
+ * @param input Eingabemorsecode (ASCII).
+ * @param out Zielstream (stdout oder Datei).
+ */
 void decode_morse(const char* input, FILE* out) {
     char buffer[16];
     size_t buf_index = 0;
@@ -82,6 +119,11 @@ void decode_morse(const char* input, FILE* out) {
     fputc('\n', out);
 }
 
+/**
+ * @brief Gibt die Programmhilfe auf stdout aus.
+ *
+ * Zeigt alle unterstützten Kommandozeilenparameter und deren Verwendung an.
+ */
 void print_help() {
     puts("Benutzung: morse [OPTION]... [DATEI]...\n"
          "  -e, --encode            Text in Morsecode umwandeln\n"
@@ -92,6 +134,11 @@ void print_help() {
          "  --programmer-info       JSON-Ausgabe mit Autorinformationen");
 }
 
+/**
+ * @brief Gibt die Autoreninformationen im JSON-Format auf stdout aus.
+ *
+ * Wird durch den Kommandozeilenparameter --programmer-info aktiviert.
+ */
 void print_programmer_info() {
     puts("{\n"
          "  \"surname\": \"Johannsen\",\n"
