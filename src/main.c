@@ -63,6 +63,7 @@ int main(int argc, char *argv[]) {
     // Eingabe lesen
     char input[4096] = {0};
     if (optind < argc) {
+        const char *input_filename = argv[optind];
         FILE *infile = fopen(argv[optind], "r");
         if (!infile) {
             perror("Fehler beim Öffnen der Eingabedatei");
@@ -71,12 +72,17 @@ int main(int argc, char *argv[]) {
         fread(input, 1, sizeof(input)-1, infile);
         fclose(infile);
     } else {
-        fread(input, 1, sizeof(input)-1, stdin);
+        fgets(input, sizeof(input), stdin);
     }
 
-    if (decode) decode_morse(input, out);
-    else encode_text(input, out, slash_mode);
+    if (decode) {
+        decode_morse(input, out);
+    } else {
+        encode_text(input, out, slash_mode);
+    }
 
-    if (out != stdout) fclose(out);
+    if (out != stdout) {
+        fclose(out);
+    }
     return 0;
 }
