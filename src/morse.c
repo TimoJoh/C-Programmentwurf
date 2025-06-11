@@ -128,7 +128,7 @@ void decode_morse(const char* input, FILE* out) {
  * Zeigt alle unterstützten Kommandozeilenparameter und deren Verwendung an.
  */
 void print_help() {
-    puts("Benutzung: morse [OPTION]... [DATEI]...\n"
+    puts("Benutzung: ./morse [OPTION]... [DATEI]...\n"
          "  -e, --encode            Text in Morsecode umwandeln\n"
          "  -d, --decode            Morsecode in Text umwandeln\n"
          "  -o, --out DATEI         Ausgabe in DATEI schreiben\n"
