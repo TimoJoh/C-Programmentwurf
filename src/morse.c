@@ -26,6 +26,7 @@ typedef struct {
  * Basierend auf DARC-Tabelle: https://dk0ru.github.io/downloads/m21-morse-code.pdf
  */
 static const MorseCode morse_table[] = {
+    // Buchstaben
     {'A', ".-"},    {'B', "-..."},  {'C', "-.-."},
     {'D', "-.."},   {'E', "."},     {'F', "..-."},
     {'G', "--."},   {'H', "...."},  {'I', ".."},
@@ -35,10 +36,12 @@ static const MorseCode morse_table[] = {
     {'S', "..."},   {'T', "-"},     {'U', "..-"},
     {'V', "...-"},  {'W', ".--"},   {'X', "-..-"},
     {'Y', "-.--"},  {'Z', "--.."},
+    // Ziffern
     {'0', "-----"}, {'1', ".----"}, {'2', "..---"},
     {'3', "...--"}, {'4', "....-"}, {'5', "....."},
     {'6', "-...."}, {'7', "--..."}, {'8', "---.."},
     {'9', "----."},
+    // Sonderzeichen
     {'.', ".-.-.-"},{',', "--..--"},{':', "---..."},
     {';', "-.-.-."},{'?', "..--.."},
     {'=', "-...-"},{'-', "-....-"},{'_', "..--.-"},
@@ -141,8 +144,8 @@ void print_help() {
  */
 void print_programmer_info() {
     puts("{\n"
+         "  \"firstname\": \"Timo\",\n"
          "  \"surname\": \"Johannsen\",\n"
-         "  \"name\": \"Timo\",\n"
          "  \"branch_of_study\": \"TIK\",\n"
          "  \"contact\": \"johannsen.timo-it24@it.dhbw-ravensburg.de\"\n"
          "}");
