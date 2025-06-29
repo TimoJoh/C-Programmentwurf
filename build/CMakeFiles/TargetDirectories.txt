@@ -1,3 +1,0 @@
-/home/timojohannsen/C-Programming/C-Programmentwurf/build/CMakeFiles/morse.dir
-/home/timojohannsen/C-Programming/C-Programmentwurf/build/CMakeFiles/edit_cache.dir
-/home/timojohannsen/C-Programming/C-Programmentwurf/build/CMakeFiles/rebuild_cache.dir
