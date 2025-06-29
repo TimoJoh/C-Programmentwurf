@@ -32,6 +32,7 @@
  */
 int main(int argc, char *argv[]) {
     int encode = 1, decode = 0, slash_mode = 0;
+    int has_e = 0, has_d = 0;
     char *outfile = NULL;
 
     /** Definition der unterstützten langen Optionen. */
@@ -58,10 +59,12 @@ int main(int argc, char *argv[]) {
                 break;
             case 'e':
                 encode = 1;
+                has_e = 1;
                 break;
             case 'd':
                 encode = 0;
                 decode = 1;
+                has_d = 1;
                 break;
             case 'o':
                 outfile = optarg;
@@ -75,7 +78,7 @@ int main(int argc, char *argv[]) {
         }
     }
 
-    if (encode && decode) {
+    if (has_d && has_e) {
         fprintf(stderr, "Fehler: Encode und Decode gleichzeitig nicht erlaubt\n");
         return 1;
     }
