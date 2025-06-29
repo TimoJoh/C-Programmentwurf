@@ -1,29 +1,50 @@
-# Build-Verzeichnis
-/build/
-/build-*/
+# Build directories
+build/
+build-*/
+bin/
+obj/
+out/
 
-# CMake generierte Dateien
-/build/CMakeFiles/
-/build/CMakeCache.txt
-/build/cmake_install.cmake
+# CMake generated files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
 Makefile
 
-# Executable (Linux oder WSL)
+# Executables (Linux, macOS, Windows)
+*.exe
+*.out
+*.app
+*.dll
+*.so
+*.dylib
 morse
 
-# Executable (Windows, MinGW / CMake)
-morse.exe
-
-# Editor/IDE Files
+# Editor/IDE files
 *.swp
 *.swo
 *.user
 *.log
+*.vscode/
+*.idea/
+*.code-workspace
 
 # Backup files
 *~
 *.bak
 
-# Testausgaben
+# Test outputs
 *.out
 *.txt
+
+# Debug files
+*.dSYM/
+*.stackdump
+
+# Others
+*.obj
+*.o
+*.a
+*.lib
+*.pch
+*.pdb
