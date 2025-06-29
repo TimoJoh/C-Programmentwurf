@@ -3,9 +3,9 @@
 /build-*/
 
 # CMake generierte Dateien
-CMakeFiles/
-CMakeCache.txt
-cmake_install.cmake
+/build/CMakeFiles/
+/build/CMakeCache.txt
+/build/cmake_install.cmake
 Makefile
 
 # Executable (Linux oder WSL)
